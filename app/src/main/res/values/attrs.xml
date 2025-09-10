@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomRatingView">
+        <attr name="starCount" format="integer" />
+        <attr name="rating" format="float" />
+        <attr name="starSize" format="dimension" />
+        <attr name="starSpacing" format="dimension" />
+        <attr name="starFilled" format="reference" />
+        <attr name="starEmpty" format="reference" />
+    </declare-styleable>
+</resources>
