@@ -19,6 +19,9 @@ import com.karrar.movieapp.utilities.Constants.FIRST_CATEGORY_ID
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 
 @BindingAdapter("app:showWhenListNotEmpty")
@@ -153,7 +156,7 @@ fun bindMovieImage(image: ImageView, imageURL: String?) {
     imageURL?.let {
         image.load(imageURL) {
             placeholder(R.drawable.loading)
-            error(R.drawable.ic_profile_place_holder)
+            error(R.drawable.circle_image)
         }
     }
 }
@@ -257,4 +260,23 @@ fun setRating(view: RatingBar?, rating: Float) {
 @BindingAdapter("showWhenTextNotEmpty")
 fun <T> showWhenTextNotEmpty(view: View,text:String){
     view.isVisible = text.isNotEmpty()
+}
+
+@BindingAdapter("app:formattedDate")
+fun setFormattedDate( textView: TextView, dateString: String?) {
+    if (dateString.isNullOrEmpty()) {
+        textView.text = ""
+        return
+    }
+
+    try {
+        val inputFormat = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+        val date: Date? = inputFormat.parse(dateString)
+
+        val outputFormat = SimpleDateFormat("MMM dd, yyyy",  Locale.ENGLISH)
+
+        textView.text = date?.let { outputFormat.format(it) } ?: dateString
+    } catch (e: Exception) {
+        textView.text = dateString
+    }
 }
