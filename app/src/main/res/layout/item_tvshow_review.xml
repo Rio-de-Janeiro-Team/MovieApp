@@ -96,7 +96,7 @@
             app:formattedDate="@{item.createDate}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/rating_bar"
-            tools:text="2019-09-30" />
+            tools:text="Apr 30, 2019" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

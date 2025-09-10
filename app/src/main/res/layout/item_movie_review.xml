@@ -11,18 +11,21 @@
 
     </data>
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/spacing_medium"
-        android:paddingTop="@dimen/spacing_small">
+        android:padding="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="@dimen/spacing_medium"
+        android:background="@drawable/review_card_background"
+        >
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/user_image"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:scaleType="centerCrop"
-            android:background="@color/gray"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:posterImage="@{item.userImage}"
@@ -31,21 +34,22 @@
 
         <TextView
             android:id="@+id/name"
-            style="@style/Regular.Medium.Primary"
+            style="@style/Body.md.medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@{item.name}"
-            android:textColor="@color/shade_primary_color"
+            android:textColor="@color/shade_primary"
             app:layout_constraintStart_toEndOf="@+id/user_image"
             app:layout_constraintTop_toTopOf="@+id/user_image"
             tools:text="Elizabeth Jones" />
 
         <TextView
             android:id="@+id/user_name"
-            style="@style/Regular.Small.ternary"
+            style="@style/Body.sm.regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:text="@{@string/user_name(item.userName)}"
             app:layout_constraintStart_toStartOf="@+id/name"
             app:layout_constraintTop_toBottomOf="@+id/name"
@@ -53,14 +57,14 @@
 
         <io.github.glailton.expandabletextview.ExpandableTextView
             android:id="@+id/comment"
-            style="@style/Regular.Small.Primary"
+            style="@style/Body.md.medium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:text="@{item.content}"
             app:animDuration="500"
             app:collapsedLines="5"
-            app:ellipsizeTextColor="@color/brand_color"
+            app:ellipsizeTextColor="@color/brand_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/user_name"
@@ -69,30 +73,31 @@
             tools:text="Krasinski's instincts are very good, and once you've placed the primary action there, then it allows the story instincts are very good, and once you've placed the primary action there, then it allows the story" />
 
 
-        <androidx.appcompat.widget.AppCompatRatingBar
+        <com.karrar.movieapp.utilities.CustomRatingView
             android:id="@+id/rating_bar"
-            android:layout_width="0dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="16dp"
-            android:isIndicator="true"
-            android:progressDrawable="@drawable/rating_custom"
-            android:rating="@{item.rating}"
-            android:scaleX="0.5"
-            android:scaleY="0.5"
-            android:stepSize="0.5"
-            android:transformPivotX="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:starCount="5"
+            app:starFilled="@drawable/ic_fill_star"
+            app:starEmpty="@drawable/ic_empty_star"
+            app:starSize="16dp"
+            app:starSpacing="4dp"
+            app:rating="@{item.rating}"
+            tools:rating="4"
             app:layout_constraintStart_toStartOf="@+id/comment"
             app:layout_constraintTop_toBottomOf="@+id/comment" />
 
         <TextView
             android:id="@+id/comment_date"
-            style="@style/Regular.Small.ternary"
+            style="@style/Body.sm.regular"
+            android:textColor="@color/shade_secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{item.createDate}"
+            app:formattedDate="@{item.createDate}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/rating_bar"
-            tools:text="3w ago" />
+            tools:text="Apr 30, 2019" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
