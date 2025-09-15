@@ -1,21 +1,16 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="16dp"
-    android:height="16dp"
-    android:viewportWidth="16"
-    android:viewportHeight="16">
+    android:width="40dp"
+    android:height="41dp"
+    android:viewportWidth="40"
+    android:viewportHeight="41">
   <path
-      android:pathData="M7.777,12.421L3.822,14.587C3.507,14.751 3.118,14.635 2.944,14.325V14.325C2.893,14.228 2.866,14.122 2.864,14.013V4.414C2.864,2.584 4.115,1.852 5.915,1.852H10.144C11.889,1.852 13.195,2.535 13.195,4.292V14.013C13.195,14.186 13.127,14.352 13.004,14.475C12.882,14.597 12.715,14.666 12.542,14.666C12.432,14.665 12.323,14.637 12.225,14.587L8.246,12.421C8.1,12.341 7.923,12.341 7.777,12.421Z"
-      android:strokeLineJoin="round"
-      android:strokeWidth="1.5"
-      android:fillColor="#00000000"
-      android:fillType="evenOdd"
-      android:strokeColor="#03050A"
-      android:strokeLineCap="round"/>
+      android:fillColor="#FFF1F3FF"
+      android:pathData="M0 20.5C0 11.07 0 6.36 2.93 3.43 5.86 0.5 10.57 0.5 20 0.5s14.14 0 17.07 2.93C40 6.36 40 11.07 40 20.5s0 14.14-2.93 17.07C34.14 40.5 29.43 40.5 20 40.5s-14.14 0-17.07-2.93C0 34.64 0 29.93 0 20.5Z"/>
   <path
-      android:pathData="M5.58,6.214H10.443"
-      android:strokeLineJoin="round"
-      android:strokeWidth="1.5"
-      android:fillColor="#00000000"
-      android:strokeColor="#03050A"
-      android:strokeLineCap="round"/>
+      android:fillColor="#FF717171"
+      android:fillAlpha="0.4"
+      android:pathData="M24.02 12.17h-8.04c-1.77 0-3.21 1.45-3.21 3.21v11.75c0 1.5 1.07 2.13 2.39 1.4l4.06-2.25c0.44-0.25 1.14-0.25 1.56 0l4.07 2.25c1.32 0.74 2.4 0.1 2.4-1.4V15.38c-0.02-1.76-1.46-3.21-3.23-3.21Z"/>
+  <path
+      android:fillColor="#FF717171"
+      android:pathData="M22.08 18.75h-1.45v-1.4c0-0.35-0.29-0.63-0.63-0.63s-0.62 0.28-0.62 0.62v1.41h-1.46c-0.34 0-0.63 0.28-0.63 0.63 0 0.34 0.29 0.62 0.63 0.62h1.46v1.5c0 0.35 0.28 0.63 0.62 0.63 0.34 0 0.63-0.28 0.63-0.62V20h1.45c0.35 0 0.63-0.28 0.63-0.62 0-0.35-0.28-0.63-0.63-0.63Z"/>
 </vector>
