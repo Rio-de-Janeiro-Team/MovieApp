@@ -196,6 +196,16 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="Body.md.medium">
+        <item name="android:fontFamily">@font/manrope_medium</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Body.sm.regular">
+        <item name="android:fontFamily">@font/manrope_regular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
     <style name="Body.sm">
         <item name="android:textSize">12sp</item>
     </style>
