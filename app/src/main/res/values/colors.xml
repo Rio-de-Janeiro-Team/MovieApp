@@ -22,7 +22,7 @@
     <color name="button_secondary">#F1F3FF</color>
     <color name="button_disabled">#E5E5E5</color>
     <color name="button_on_primary">#FFFFFF</color>
-    <color name="button_on_secondary">#313131</color>
+    <color name="button_on_secondary">#717171</color>
     <color name="button_on_disabled">#A5A5A5</color>
     <color name="button_on_tertiary">#536DFE</color>
 
