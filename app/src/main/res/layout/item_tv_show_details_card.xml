@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.karrar.movieapp.ui.movieDetails.movieDetailsUIState.MovieDetailsUIState" />
+            type="com.karrar.movieapp.ui.tvShowDetails.tvShowUIState.TvShowDetailsResultUIState" />
 
         <variable
             name="listener"
@@ -45,7 +45,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="@{item.name}"
+                android:text="@{item.tvShowName}"
                 android:textColor="@color/shade_primary"
                 app:layout_constraintEnd_toStartOf="@+id/btn_play"
                 app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +81,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="@{item.genres}"
+                android:text="@{item.tvShowGenres}"
                 android:textColor="@color/shade_secondary"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="@id/media_title"
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:drawablePadding="4dp"
-                android:text="@{item.voteAverage}"
+                android:text="@{item.tvShowVoteAverage}"
                 android:textColor="@color/shade_secondary"
                 android:textSize="12sp"
                 app:drawableStartCompat="@drawable/ic_star"
@@ -104,22 +104,6 @@
                 app:layout_constraintTop_toBottomOf="@id/media_genres"
                 tools:text="8.5" />
 
-            <TextView
-                android:id="@+id/media_duration"
-                style="@style/Lable"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:drawablePadding="4dp"
-                android:textColor="@color/shade_secondary"
-                android:textSize="12sp"
-                app:drawableStartCompat="@drawable/ic_time"
-                app:layout_constraintBottom_toBottomOf="@+id/media_rating"
-                app:layout_constraintStart_toEndOf="@id/media_rating"
-                app:layout_constraintTop_toTopOf="@+id/media_rating"
-                app:movieHours="@{item.hours}"
-                app:movieMinutes="@{item.minutes}"
-                tools:text="2h 32m" />
 
             <TextView
                 android:id="@+id/media_release_date"
@@ -128,14 +112,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:drawablePadding="4dp"
-                android:text="@{item.releaseDate}"
+                android:text="@{item.tvShowReleaseDate}"
                 android:textColor="@color/shade_secondary"
                 android:textSize="12sp"
                 app:drawableStartCompat="@drawable/ic_calender"
-                app:layout_constraintBottom_toBottomOf="@+id/media_duration"
+                app:layout_constraintBottom_toBottomOf="@+id/media_rating"
                 app:layout_constraintEnd_toEndOf="@+id/media_genres"
-                app:layout_constraintStart_toEndOf="@+id/media_duration"
-                app:layout_constraintTop_toTopOf="@+id/media_duration"
+                app:layout_constraintStart_toEndOf="@+id/media_rating"
+                app:layout_constraintTop_toTopOf="@+id/media_rating"
                 tools:text="2008, Jul 18" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
