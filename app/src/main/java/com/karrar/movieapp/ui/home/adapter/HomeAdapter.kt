@@ -119,6 +119,10 @@ class HomeAdapter(
                 is HomeItem.UpcomingMovies -> {
                     bindMovie(holder, currentItem.items, currentItem.type)
                 }
+
+                HomeItem.NavigateToExploreSection -> {
+                    holder.binding.setVariable(BR.listener, listener as HomeInteractionListener)
+                }
             }
     }
 
@@ -162,6 +166,8 @@ class HomeAdapter(
                 is HomeItem.Trending,
                 is HomeItem.UpcomingMovies,
                 -> R.layout.list_movie
+
+                HomeItem.NavigateToExploreSection -> R.layout.explore_section
             }
         }
         return -1

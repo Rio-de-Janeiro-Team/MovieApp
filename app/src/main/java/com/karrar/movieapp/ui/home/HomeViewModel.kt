@@ -302,6 +302,10 @@ class HomeViewModel @Inject constructor(
 
     }
 
+    override fun onClickExploreSection() {
+        _homeUIEvent.update { Event(HomeUIEvent.ClickExploreSectionEvent) }
+    }
+
     override fun onClickMedia(mediaId: Int) {
         _homeUIEvent.update { Event(HomeUIEvent.ClickSeriesEvent(mediaId)) }
     }

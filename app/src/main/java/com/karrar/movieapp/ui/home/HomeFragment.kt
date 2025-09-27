@@ -40,6 +40,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                         // match your vibes
                         // featured collections
                         it.topRatedTvShows,
+                        HomeItem.NavigateToExploreSection
                         // your recently viewed
                         // your collections
                     )
@@ -89,6 +90,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 HomeFragmentDirections.actionHomeFragmentToTvShowDetailsFragment(
                     event.seriesID
                 )
+            }
+
+            is HomeUIEvent.ClickExploreSectionEvent -> {
+                HomeFragmentDirections.actionHomeFragmentToExploringFragment()
             }
         }
         findNavController().navigate(action)

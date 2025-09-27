@@ -26,5 +26,6 @@ sealed class HomeItem(val priority: Int) {
     data class Adventure(val items: List<MediaUiState>, val type: HomeItemsType = HomeItemsType.ADVENTURE) : HomeItem(8)
 
     data class Actor(val items: List<ActorUiState>) : HomeItem(9)
+    data object NavigateToExploreSection : HomeItem(10)
 
 }
