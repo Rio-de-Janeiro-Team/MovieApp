@@ -22,7 +22,7 @@ class ActorDetailsFragment : BaseFragment<FragmentActorDetailsBinding>() {
         super.onViewCreated(view, savedInstanceState)
         setTitle(false)
         binding.relatedMovieRecycler.adapter = ActorMoviesAdapter(mutableListOf(), viewModel)
-
+        binding.socialMediaRecycler.adapter=ActorSocialMediaAdapter(mutableListOf(),viewModel)
         collectLast(viewModel.actorDetailsUIEvent) {
             it.getContentIfNotHandled()?.let { onEvent(it) }
         }
