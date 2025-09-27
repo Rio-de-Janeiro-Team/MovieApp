@@ -9,7 +9,8 @@ data class ActorDetailsUIState(
     val knownFor: String = "",
     val biography: String = "",
     val isLoading: Boolean = false,
-    val isSuccess: Boolean = false,
+    val isSuccess: Boolean = true,
     val error: List<Error> = emptyList(),
-    val actorMovies: List<ActorMoviesUIState> = emptyList()
+    val actorMovies: List<ActorMoviesUIState> = emptyList(),
+    val socialMedia: List<SocialMediaItemUiState> = emptyList()
 )
