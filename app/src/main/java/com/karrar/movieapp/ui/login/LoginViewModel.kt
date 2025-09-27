@@ -32,12 +32,21 @@ class LoginViewModel @Inject constructor(
     private val _loginEvent = MutableStateFlow<Event<LoginUIEvent?>>(Event(null))
     val loginEvent = _loginEvent.asStateFlow()
 
-    fun onClickSignUp() {
+    fun onClickCreateNewAccount() {
         _loginEvent.update { Event(LoginUIEvent.SignUpEvent) }
     }
 
     fun onClickLogin() {
         login()
+    }
+
+    fun onClickForgetPassword() {
+        _loginEvent.update { Event(LoginUIEvent.ForgetPasswordEvent) }
+    }
+
+    fun onClickJoinAsGuest() {
+        _loginUIState.update { it.copy(isJoinAsGuest = true) }
+        _loginEvent.update { Event(LoginUIEvent.JoinAsGuestEvent) }
     }
 
     fun onUserNameInputChange(text: CharSequence) {
