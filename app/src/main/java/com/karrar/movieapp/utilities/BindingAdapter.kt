@@ -4,6 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.annotation.DrawableRes
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.PagerSnapHelper
@@ -279,4 +280,8 @@ fun setFormattedDate( textView: TextView, dateString: String?) {
     } catch (e: Exception) {
         textView.text = dateString
     }
+}
+@BindingAdapter("iconRes")
+fun ImageView.setIcon(@DrawableRes resId: Int?) {
+    resId?.let { setImageResource(it) }
 }
