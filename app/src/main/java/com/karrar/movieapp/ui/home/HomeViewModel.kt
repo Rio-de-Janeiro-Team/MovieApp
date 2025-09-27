@@ -1,9 +1,6 @@
 package com.karrar.movieapp.ui.home
 
-import android.util.Log
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.karrar.movieapp.domain.RequestStatus
 import com.karrar.movieapp.domain.enums.AllMediaType
 import com.karrar.movieapp.domain.enums.HomeItemsType
 import com.karrar.movieapp.domain.usecase.home.HomeUseCasesContainer
@@ -71,8 +68,10 @@ class HomeViewModel @Inject constructor(
                     if (list.isNotEmpty()) {
                         val items = list.map(popularUiMapper::map)
                         _homeUiState.update {
-                            it.copy(popularMovies = HomeItem.Slider(items),
-                                isLoading = false)
+                            it.copy(
+                                popularMovies = HomeItem.Slider(items),
+                                isLoading = false
+                            )
                         }
                     }
                 }
@@ -95,8 +94,10 @@ class HomeViewModel @Inject constructor(
                     if (list.isNotEmpty()) {
                         val items = list.map(mediaUiMapper::map)
                         _homeUiState.update {
-                            it.copy(trendingMovies = HomeItem.Trending(items),
-                                isLoading = false)
+                            it.copy(
+                                trendingMovies = HomeItem.Trending(items),
+                                isLoading = false
+                            )
                         }
                     }
                 }
@@ -114,8 +115,10 @@ class HomeViewModel @Inject constructor(
                     if (list.isNotEmpty()) {
                         val items = list.map(actorUiMapper::map)
                         _homeUiState.update {
-                            it.copy(actors = HomeItem.Actor(items),
-                                isLoading = false)
+                            it.copy(
+                                actors = HomeItem.Actor(items),
+                                isLoading = false
+                            )
                         }
                     }
                 }
@@ -133,8 +136,10 @@ class HomeViewModel @Inject constructor(
                     if (list.isNotEmpty()) {
                         val items = list.map(mediaUiMapper::map)
                         _homeUiState.update {
-                            it.copy(upcomingMovies = HomeItem.Upcoming(items),
-                                isLoading = false)
+                            it.copy(
+                                upcomingMovies = HomeItem.Upcoming(items),
+                                isLoading = false
+                            )
                         }
                     }
                 }
@@ -153,8 +158,10 @@ class HomeViewModel @Inject constructor(
                     if (list.isNotEmpty()) {
                         val items = list.map(mediaUiMapper::map)
                         _homeUiState.update {
-                            it.copy(nowStreamingMovies = HomeItem.NowStreaming(items),
-                                isLoading = false)
+                            it.copy(
+                                nowStreamingMovies = HomeItem.NowStreaming(items),
+                                isLoading = false
+                            )
                         }
                     }
                 }
@@ -172,12 +179,15 @@ class HomeViewModel @Inject constructor(
                     if (list.isNotEmpty()) {
                         val items = list.map(mediaUiMapper::map)
                         _homeUiState.update {
-                            it.copy(tvShowsSeries = HomeItem.TvShows(items),
-                                isLoading = false)
+                            it.copy(
+                                tvShowsSeries = HomeItem.TvShows(items),
+                                isLoading = false
+                            )
                         }
                     }
                 }
-            }catch (t:Throwable){}
+            } catch (t: Throwable) {
+            }
         }
     }
 
@@ -188,8 +198,10 @@ class HomeViewModel @Inject constructor(
                     if (list.isNotEmpty()) {
                         val items = list.map(mediaUiMapper::map)
                         _homeUiState.update {
-                            it.copy(onTheAiringSeries = HomeItem.OnTheAiring(items),
-                                isLoading = false)
+                            it.copy(
+                                onTheAiringSeries = HomeItem.OnTheAiring(items),
+                                isLoading = false
+                            )
                         }
                     }
                 }
@@ -207,8 +219,10 @@ class HomeViewModel @Inject constructor(
                     if (list.isNotEmpty()) {
                         val items = list.map(mediaUiMapper::map)
                         _homeUiState.update {
-                            it.copy(airingTodaySeries = HomeItem.AiringToday(items),
-                                isLoading = false)
+                            it.copy(
+                                airingTodaySeries = HomeItem.AiringToday(items),
+                                isLoading = false
+                            )
                         }
                     }
                 }
@@ -227,8 +241,10 @@ class HomeViewModel @Inject constructor(
                     if (list.isNotEmpty()) {
                         val items = list.map(mediaUiMapper::map)
                         _homeUiState.update {
-                            it.copy(mysteryMovies = HomeItem.Mystery(items),
-                                isLoading = false)
+                            it.copy(
+                                mysteryMovies = HomeItem.Mystery(items),
+                                isLoading = false
+                            )
                         }
                     }
                 }
@@ -246,8 +262,10 @@ class HomeViewModel @Inject constructor(
                     if (list.isNotEmpty()) {
                         val items = list.map(mediaUiMapper::map)
                         _homeUiState.update {
-                            it.copy(adventureMovies = HomeItem.Adventure(items),
-                                isLoading = false)
+                            it.copy(
+                                adventureMovies = HomeItem.Adventure(items),
+                                isLoading = false
+                            )
                         }
                     }
                 }
