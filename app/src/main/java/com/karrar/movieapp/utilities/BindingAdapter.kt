@@ -1,5 +1,6 @@
 package com.karrar.movieapp.utilities
 
+import android.os.Looper
 import android.view.View
 import android.widget.ImageView
 import android.widget.RatingBar
@@ -8,7 +9,10 @@ import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.ViewPager2
 import coil.load
+import com.google.android.material.card.MaterialCardView
 import com.google.android.material.chip.ChipGroup
 import com.karrar.movieapp.R
 import com.karrar.movieapp.domain.enums.MediaType
@@ -22,6 +26,80 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTube
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import kotlin.math.abs
+
+
+@BindingAdapter("viewPagerAdapter")
+fun setViewPagerAdapter(viewPager: ViewPager2, adapter: RecyclerView.Adapter<*>?) {
+    adapter?.let {
+        viewPager.adapter = it
+    }
+}
+
+
+@BindingAdapter("setupCarousel")
+fun setupCarousel(viewPager: ViewPager2, adapter: BaseAdapter<*>) {
+
+    viewPager.adapter = adapter
+    viewPager.offscreenPageLimit = 3
+    viewPager.clipToPadding = false
+    viewPager.clipChildren = false
+    viewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+
+    val nextItemVisiblePx = 48
+    viewPager.setPadding(nextItemVisiblePx, 0, nextItemVisiblePx, 0)
+
+    val compositePageTransformer = CompositePageTransformer().apply {
+        addTransformer { page, position ->
+
+            val pageWidth = page.width
+            page.translationX = -position * (pageWidth * 0.18f)
+
+            val absPos = abs(position)
+
+
+            val alpha = 0.6f + (1 - absPos) * 0.4f
+            page.alpha = alpha
+
+            val translationY = 120f * absPos
+            page.translationY = translationY
+
+            page.translationZ = if (absPos < 0.001f) 1f else 0f
+
+            val title = page.findViewById<TextView>(R.id.title_popular_text_view)
+            val genre = page.findViewById<TextView>(R.id.genre_popular_text_view)
+            val rating = page.findViewById<MaterialCardView>(R.id.rating_popular_movie)
+
+            val visibilityAlpha = 1 - absPos // 1 at center, 0 at edges
+            title?.alpha = visibilityAlpha
+            genre?.alpha = visibilityAlpha
+            rating?.alpha = visibilityAlpha
+        }
+    }
+
+    viewPager.setPageTransformer(compositePageTransformer)
+
+    val handler = android.os.Handler(Looper.getMainLooper())
+    val runnable = object : Runnable {
+        override fun run() {
+            val itemCount = adapter.itemCount
+            if (itemCount > 0) {
+                val nextItem = (viewPager.currentItem + 1) % itemCount
+                viewPager.setCurrentItem(nextItem, true)
+                handler.postDelayed(this, 4000)
+            }
+        }
+    }
+
+    handler.postDelayed(runnable, 4000)
+
+    viewPager.addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener {
+        override fun onViewAttachedToWindow(v: View) {}
+        override fun onViewDetachedFromWindow(v: View) {
+            handler.removeCallbacks(runnable)
+        }
+    })
+}
 
 
 @BindingAdapter("app:showWhenListNotEmpty")
