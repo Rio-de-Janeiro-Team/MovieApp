@@ -4,6 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.karrar.movieapp.domain.enums.HomeItemsType
 import com.karrar.movieapp.domain.usecases.GetActorDetailsUseCase
+import com.karrar.movieapp.domain.usecases.GetActorExternalIds
 import com.karrar.movieapp.domain.usecases.GetActorMoviesUseCase
 import com.karrar.movieapp.ui.adapters.MovieInteractionListener
 import com.karrar.movieapp.ui.base.BaseViewModel
@@ -22,7 +23,8 @@ class ActorViewModel @Inject constructor(
     private val getActorDetailsUseCase: GetActorDetailsUseCase,
     private val getActorMoviesUseCase: GetActorMoviesUseCase,
     private val actorDetailsUIMapper: ActorDetailsUIMapper,
-    private val actorMoviesUIMapper: ActorMoviesUIMapper
+    private val actorMoviesUIMapper: ActorMoviesUIMapper,
+    private val getActorExternalIdsUseCase: GetActorExternalIds
 ) : BaseViewModel(), MovieInteractionListener {
 
     val args = ActorDetailsFragmentArgs.fromSavedStateHandle(state)
@@ -44,6 +46,8 @@ class ActorViewModel @Inject constructor(
             try {
                 val actorDetails = actorDetailsUIMapper.map(getActorDetailsUseCase(args.id))
                 val actorMovies = getActorMoviesUseCase(args.id).map { actorMoviesUIMapper.map(it) }
+                val actorExternalIds=getActorExternalIdsUseCase(args.id)
+
                 _actorDetailsUIState.update {
                     it.copy(
                         name = actorDetails.name,
@@ -55,7 +59,8 @@ class ActorViewModel @Inject constructor(
                         knownFor = actorDetails.knownFor,
                         actorMovies = actorMovies,
                         isLoading = false,
-                        isSuccess = true
+                        isSuccess = true,
+                        socialMedia = actorExternalIds
                     )
                 }
             } catch (e: Exception) {
