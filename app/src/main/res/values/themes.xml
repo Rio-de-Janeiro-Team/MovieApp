@@ -1,18 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Theme.MovieApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="colorPrimary">@color/brand_color</item>
+        <item name="colorPrimary">@color/brand_primary</item>
         <item name="colorPrimaryVariant">@color/background_color</item>
-
+        <item name="colorOnPrimary">@color/white_primary</item>
         <item name="android:statusBarColor">@color/background_color</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 
         <item name="textInputStyle">@style/Login</item>
         <item name="actionBarTheme">@style/MyTheme</item>
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
-
     </style>
 
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxBackgroundColor">@color/background_card</item>
+        <item name="boxStrokeColor">@color/stroke_primary</item>
+        <item name="errorTextColor">@color/additional_primary_red</item>
+        <item name="helperTextTextColor">@color/additional_primary_red</item>
+        <item name="hintEnabled">false</item>
+        <item name="placeholderTextColor">@color/shade_tertiary</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="cornerRadius">@dimen/radius_lg</item>
+    </style>
+
+    <style name="ButtonPrimaryStyle" parent="ButtonStyle">
+        <item name="backgroundTint">@color/color_states_button</item>
+        <item name="android:textColor">@color/button_on_primary</item>
+    </style>
+
+    <style name="ButtonSecondaryStyle" parent="ButtonStyle">
+        <item name="backgroundTint">@color/button_secondary</item>
+        <item name="android:textColor">@color/button_on_secondary</item>
+    </style>
 
     <style name="AppBottomSheetDialogTheme" parent="Theme.Design.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/AppModalStyle</item>
@@ -65,7 +97,6 @@
         <item name="android:textColor">@color/shade_secondary_color</item>
     </style>
 
-
     <style name="Regular.Small">
         <item name="android:textSize">@dimen/text_small</item>
         <item name="android:textColor">@color/shade_primary_color</item>
@@ -78,7 +109,6 @@
     <style name="Regular.Small.ternary">
         <item name="android:textColor">@color/shade_ternary_color</item>
     </style>
-
 
     <style name="CardCorners">
         <item name="cornerFamily">rounded</item>
@@ -104,9 +134,9 @@
         <item name="hintTextAppearance">@style/Regular.Medium.Primary</item>
         <item name="startIconTint">@color/shade_secondary_color</item>
         <item name="helperTextEnabled">true</item>
-        <item name="helperTextTextColor">@color/design_default_color_error</item>
+        <item name="helperTextTextColor">@color/additional_primary_red</item>
+        <item name="errorTextColor">@color/additional_primary_red</item>
         <item name="errorEnabled">true</item>
-
     </style>
 
     <style name="Theme.MovieApp.SplashScreen" parent="Theme.SplashScreen.IconBackground">
@@ -119,12 +149,10 @@
         <item name="cornerSize">50%</item>
     </style>
 
-
     <style name="CardCorners.BottomMedium">
         <item name="cornerSizeBottomLeft">@dimen/radius_medium</item>
         <item name="cornerSizeBottomRight">@dimen/radius_medium</item>
     </style>
-
 
     <style name="Circle">
         <item name="cornerSize">50%</item>
@@ -136,7 +164,6 @@
         <item name="chipStrokeWidth">1dp</item>
         <item name="android:textAlignment">center</item>
     </style>
-
 
     <style name="chipChip" parent="Widget.Material3.Chip.Suggestion">
         <item name="chipStrokeColor">@color/brand_color</item>
@@ -152,14 +179,10 @@
         <item name="chipCornerRadius">8dp</item>
     </style>
 
-
     <style name="Regular.Small.Primary">
         <item name="android:textColor">@color/shade_primary_color</item>
-
     </style>
 
-
-<!--    New font style      -->
     <style name="Display">
         <item name="android:fontFamily">@font/manrope_bold</item>
         <item name="android:textSize">40sp</item>
@@ -237,6 +260,4 @@
     <style name="Lable.semi_bold">
         <item name="android:fontFamily">@font/manrope_semibold</item>
     </style>
-
-
 </resources>
