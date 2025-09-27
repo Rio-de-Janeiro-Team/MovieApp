@@ -92,6 +92,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     event.seriesID
                 )
             }
+
+
         }
         findNavController().navigate(action)
     }

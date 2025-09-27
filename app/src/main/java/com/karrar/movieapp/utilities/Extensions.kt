@@ -1,10 +1,12 @@
 package com.karrar.movieapp.utilities
 
+import android.content.Intent
 import android.content.res.Resources
 import android.graphics.Rect
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Lifecycle

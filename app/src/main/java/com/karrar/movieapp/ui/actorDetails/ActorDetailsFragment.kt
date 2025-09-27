@@ -1,5 +1,7 @@
 package com.karrar.movieapp.ui.actorDetails
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
@@ -39,6 +41,9 @@ class ActorDetailsFragment : BaseFragment<FragmentActorDetailsBinding>() {
             ActorDetailsUIEvent.SeeAllMovies -> {
                 navigateToActorMovies()
             }
+
+            is ActorDetailsUIEvent.ClickSocialMedia ->
+                openSocialMedia(event.socialMediaUrl)
         }
     }
 
@@ -62,6 +67,11 @@ class ActorDetailsFragment : BaseFragment<FragmentActorDetailsBinding>() {
 
     private fun removeFragment() {
         findNavController().popBackStack()
+    }
+    fun openSocialMedia(socialMediaUrl: String){
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(socialMediaUrl))
+        startActivity(intent)
+
     }
 
 }

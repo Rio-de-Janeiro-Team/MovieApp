@@ -10,12 +10,16 @@
         <variable
             name="listener"
             type="com.karrar.movieapp.ui.adapters.MovieInteractionListener" />
+        <variable
+            name="handler"
+            type="com.karrar.movieapp.ui.actorDetails.ActorDetailsInteractionListener" />
     </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         app:cardCornerRadius="@dimen/radius_full"
+        android:onClick="@{()->handler.onClickSocialMedia(item.url)}"
         android:background="@color/shade_quinary"
         android:layout_marginEnd="8dp">
 

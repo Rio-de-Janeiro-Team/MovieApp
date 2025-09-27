@@ -25,7 +25,7 @@ class ActorViewModel @Inject constructor(
     private val actorDetailsUIMapper: ActorDetailsUIMapper,
     private val actorMoviesUIMapper: ActorMoviesUIMapper,
     private val getActorExternalIdsUseCase: GetActorExternalIds
-) : BaseViewModel(), MovieInteractionListener {
+) : BaseViewModel(), MovieInteractionListener, ActorDetailsInteractionListener {
 
     val args = ActorDetailsFragmentArgs.fromSavedStateHandle(state)
 
@@ -89,5 +89,7 @@ class ActorViewModel @Inject constructor(
     override fun onClickSeeAllMovie(homeItemsType: HomeItemsType) {
         _actorDetailsUIEvent.update { Event(ActorDetailsUIEvent.SeeAllMovies) }
     }
-
+    override fun onClickSocialMedia(socialMediaUrl: String) {
+        _actorDetailsUIEvent.update { Event(ActorDetailsUIEvent.ClickSocialMedia(socialMediaUrl)) }
+    }
 }

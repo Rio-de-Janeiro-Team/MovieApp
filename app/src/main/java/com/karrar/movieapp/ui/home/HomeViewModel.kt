@@ -278,6 +278,8 @@ class HomeViewModel @Inject constructor(
         _homeUIEvent.update { Event(HomeUIEvent.ClickSeeAllMovieEvent(type)) }
     }
 
+
+
     override fun onClickSeeAllActors() {
         _homeUIEvent.update { Event(HomeUIEvent.ClickSeeAllActorEvent) }
 
