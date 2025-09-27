@@ -16,7 +16,7 @@
         android:id="@+id/myListFragment"
         android:enabled="true"
         android:icon="@drawable/ic_book_mark"
-        android:title="@string/myList" />
+        android:title="@string/myCollection" />
 
     <item
         android:id="@+id/profileFragment"
