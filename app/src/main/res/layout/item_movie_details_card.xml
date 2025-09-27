@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.karrar.movieapp.ui.movieDetails.movieDetailsUIState.MovieDetailsUIState" />
+
+        <variable
+            name="listener"
+            type="com.karrar.movieapp.ui.movieDetails.DetailInteractionListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="@color/card_background_color"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/media_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/movie"
+                android:textColor="@color/brand_primary"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/media_title"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="MOVIE" />
+
+            <TextView
+                android:id="@+id/media_title"
+                style="@style/Title.md"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{item.name}"
+                android:textColor="@color/shade_primary"
+                app:layout_constraintEnd_toStartOf="@+id/btn_play"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/media_type"
+                tools:text="The Dark Knight" />
+
+            <ImageButton
+                android:id="@+id/btn_play"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="11dp"
+                android:background="@drawable/ic_play"
+                android:contentDescription="@string/back_button"
+                android:onClick="@{() -> listener.onClickPlayTrailer()}"
+                app:layout_constraintBottom_toTopOf="@+id/btn_save"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageButton
+                android:id="@+id/btn_save"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_save"
+                android:contentDescription="@string/back_button"
+                android:onClick="@{() -> listener.onClickSave()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/media_genres"
+                style="@style/Body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{item.genres}"
+                android:textColor="@color/shade_secondary"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/media_title"
+                app:layout_constraintStart_toStartOf="@id/media_title"
+                app:layout_constraintTop_toBottomOf="@id/media_title"
+                tools:text="Drama, Action, Crime, Thriller" />
+
+            <TextView
+                android:id="@+id/media_rating"
+                style="@style/Lable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:drawablePadding="4dp"
+                android:text="@{item.voteAverage}"
+                android:textColor="@color/shade_secondary"
+                android:textSize="12sp"
+                app:drawableStartCompat="@drawable/ic_star"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/media_genres"
+                tools:text="8.5" />
+
+            <TextView
+                android:id="@+id/media_duration"
+                style="@style/Lable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:drawablePadding="4dp"
+                android:textColor="@color/shade_secondary"
+                android:textSize="12sp"
+                app:drawableStartCompat="@drawable/ic_time"
+                app:layout_constraintBottom_toBottomOf="@+id/media_rating"
+                app:layout_constraintStart_toEndOf="@id/media_rating"
+                app:layout_constraintTop_toTopOf="@+id/media_rating"
+                app:movieHours="@{item.hours}"
+                app:movieMinutes="@{item.minutes}"
+                tools:text="2h 32m" />
+
+            <TextView
+                android:id="@+id/media_release_date"
+                style="@style/Lable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:drawablePadding="4dp"
+                android:text="@{item.releaseDate}"
+                android:textColor="@color/shade_secondary"
+                android:textSize="12sp"
+                app:drawableStartCompat="@drawable/ic_calender"
+                app:layout_constraintBottom_toBottomOf="@+id/media_duration"
+                app:layout_constraintEnd_toEndOf="@+id/media_genres"
+                app:layout_constraintStart_toEndOf="@+id/media_duration"
+                app:layout_constraintTop_toTopOf="@+id/media_duration"
+                tools:text="2008, Jul 18" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
