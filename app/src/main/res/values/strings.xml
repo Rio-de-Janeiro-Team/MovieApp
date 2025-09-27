@@ -51,7 +51,7 @@
     <string name="play_trailer">Play Trailer</string>
     <string name="duration">%1$d Minutes</string>
     <string name="reviews">(%1$s reviews)</string>
-    <string name="overview">Overview</string>
+    <string name="story_line">Story Line</string>
     <string name="cast">Cast</string>
     <string name="similar_movies">Similar Movies</string>
     <string name="rate_the_movie">Rate The Movie</string>
@@ -102,6 +102,7 @@
     <string name="this_list_has_no_lists">No lists found</string>
     <string name="episode_title">%1$d. %2$s</string>
     <string name="season_number">(%1$s Seasons)</string>
+    <string name="movie">MOVIE</string>
     <string name="magic_icon_cd">magic icon</string>
     <string name="what_should_i_watch">What Should I Watch?</string>
     <string name="let_us_choose_for_you">Let Us Choose For You!</string>
