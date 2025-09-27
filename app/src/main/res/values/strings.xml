@@ -108,4 +108,11 @@
     <string name="let_us_choose_for_you">Let Us Choose For You!</string>
     <string name="we_ll_help_you_skip_the_scroll_and_go_nstraight_to_the_good_stuff">We’ll help you skip the scroll and go straight to the good stuff.</string>
     <string name="arrow_right">Arrow right</string>
+    <string name="cine_verse_logo">Welcome back to CineVerse!</string>
+    <string name="welcome_back_to_cineverse">Welcome back to CineVerse!</string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="join_as_guest">Join as Guest</string>
+    <string name="create_a_new_account">Create a New Account</string>
+    <string name="enter_your_email_or_username">Enter your email or username</string>
+    <string name="enter_your_password">Enter your password</string>
 </resources>

@@ -10,6 +10,7 @@ import com.karrar.movieapp.databinding.FragmentLoginBinding
 import com.karrar.movieapp.ui.base.BaseFragment
 import com.karrar.movieapp.utilities.collectLast
 import dagger.hilt.android.AndroidEntryPoint
+import androidx.core.net.toUri
 
 
 @AndroidEntryPoint
@@ -32,8 +33,15 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
             }
             LoginUIEvent.SignUpEvent -> {
                 val browserIntent =
-                    Intent(Intent.ACTION_VIEW, Uri.parse(BuildConfig.TMDB_SIGNUP_URL))
+                    Intent(Intent.ACTION_VIEW, BuildConfig.TMDB_SIGNUP_URL.toUri())
                 startActivity(browserIntent)
+            }
+            LoginUIEvent.ForgetPasswordEvent -> {
+                val browserIntent = Intent(Intent.ACTION_VIEW, BuildConfig.TMDB_FORGET_PASSWORD_URL.toUri())
+                startActivity(browserIntent)
+            }
+            LoginUIEvent.JoinAsGuestEvent -> {
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
             }
         }
     }
