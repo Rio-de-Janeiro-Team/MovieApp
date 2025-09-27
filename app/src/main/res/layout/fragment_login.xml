@@ -22,8 +22,8 @@
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="104dp"
+            android:layout_height="104dp"
             android:contentDescription="@string/cine_verse_logo"
             android:src="@drawable/ic_cine_verse_logo"
             app:layout_constraintEnd_toEndOf="parent"
