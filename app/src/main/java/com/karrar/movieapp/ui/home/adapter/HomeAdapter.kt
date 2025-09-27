@@ -98,11 +98,11 @@ class HomeAdapter(
                     bindMovie(holder, currentItem.items, currentItem.type)
                 }
 
-                is HomeItem.NowStreaming -> {
+                is HomeItem.RecentlyReleased -> {
                     bindMovie(holder, currentItem.items, currentItem.type)
                 }
 
-                is HomeItem.OnTheAiring -> {
+                is HomeItem.TopRatedTvShows -> {
                     holder.binding.run {
                         setVariable(
                             BR.adapterRecycler,
@@ -116,8 +116,12 @@ class HomeAdapter(
                     bindMovie(holder, currentItem.items, currentItem.type)
                 }
 
-                is HomeItem.Upcoming -> {
+                is HomeItem.UpcomingMovies -> {
                     bindMovie(holder, currentItem.items, currentItem.type)
+                }
+
+                HomeItem.NavigateToExploreSection -> {
+                    holder.binding.setVariable(BR.listener, listener as HomeInteractionListener)
                 }
             }
     }
@@ -155,13 +159,15 @@ class HomeAdapter(
                 is HomeItem.TvShows -> R.layout.list_tv_shows
                 is HomeItem.Slider -> R.layout.list_popular
                 is HomeItem.AiringToday -> R.layout.list_airing_today
-                is HomeItem.OnTheAiring -> R.layout.list_tvshow
+                is HomeItem.TopRatedTvShows -> R.layout.list_tvshow
                 is HomeItem.Adventure,
                 is HomeItem.Mystery,
-                is HomeItem.NowStreaming,
+                is HomeItem.RecentlyReleased,
                 is HomeItem.Trending,
-                is HomeItem.Upcoming,
+                is HomeItem.UpcomingMovies,
                 -> R.layout.list_movie
+
+                HomeItem.NavigateToExploreSection -> R.layout.explore_section
             }
         }
         return -1

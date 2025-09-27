@@ -97,6 +97,7 @@
         <item name="android:textColor">@color/shade_secondary_color</item>
     </style>
 
+
     <style name="Regular.Small">
         <item name="android:textSize">@dimen/text_small</item>
         <item name="android:textColor">@color/shade_primary_color</item>
@@ -109,6 +110,7 @@
     <style name="Regular.Small.ternary">
         <item name="android:textColor">@color/shade_ternary_color</item>
     </style>
+
 
     <style name="CardCorners">
         <item name="cornerFamily">rounded</item>
@@ -137,6 +139,7 @@
         <item name="helperTextTextColor">@color/additional_primary_red</item>
         <item name="errorTextColor">@color/additional_primary_red</item>
         <item name="errorEnabled">true</item>
+
     </style>
 
     <style name="Theme.MovieApp.SplashScreen" parent="Theme.SplashScreen.IconBackground">
@@ -149,13 +152,19 @@
         <item name="cornerSize">50%</item>
     </style>
 
+
     <style name="CardCorners.BottomMedium">
         <item name="cornerSizeBottomLeft">@dimen/radius_medium</item>
         <item name="cornerSizeBottomRight">@dimen/radius_medium</item>
     </style>
 
+
     <style name="Circle">
         <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="card">
+        <item name="cornerSize">16dp</item>
     </style>
 
     <style name="Chip.Regular.Small" parent="Widget.MaterialComponents.Chip.Filter">
@@ -164,6 +173,7 @@
         <item name="chipStrokeWidth">1dp</item>
         <item name="android:textAlignment">center</item>
     </style>
+
 
     <style name="chipChip" parent="Widget.Material3.Chip.Suggestion">
         <item name="chipStrokeColor">@color/brand_color</item>
@@ -183,6 +193,8 @@
         <item name="android:textColor">@color/shade_primary_color</item>
     </style>
 
+
+<!--    New font style      -->
     <style name="Display">
         <item name="android:fontFamily">@font/manrope_bold</item>
         <item name="android:textSize">40sp</item>
@@ -260,4 +272,23 @@
     <style name="Lable.semi_bold">
         <item name="android:fontFamily">@font/manrope_semibold</item>
     </style>
+
+
+
+    <style name="Label">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Label.regular">
+        <item name="android:fontFamily">@font/manrope_regular</item>
+    </style>
+
+    <style name="Label.medium">
+        <item name="android:fontFamily">@font/manrope_medium</item>
+    </style>
+
+    <style name="Label.semi_bold">
+        <item name="android:fontFamily">@font/manrope_semibold</item>
+    </style>
+
 </resources>
