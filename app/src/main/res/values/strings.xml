@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Movie App</string>
 
-    <string name="see_all">See all</string>
+    <string name="see_all">Show More</string>
     <string name="top_rated">Top Rated</string>
     <string name="latest">Latest</string>
     <string name="popular">Popular</string>
@@ -103,4 +103,9 @@
     <string name="episode_title">%1$d. %2$s</string>
     <string name="season_number">(%1$s Seasons)</string>
     <string name="movie">MOVIE</string>
+    <string name="magic_icon_cd">magic icon</string>
+    <string name="what_should_i_watch">What Should I Watch?</string>
+    <string name="let_us_choose_for_you">Let Us Choose For You!</string>
+    <string name="we_ll_help_you_skip_the_scroll_and_go_nstraight_to_the_good_stuff">We’ll help you skip the scroll and go straight to the good stuff.</string>
+    <string name="arrow_right">Arrow right</string>
 </resources>
