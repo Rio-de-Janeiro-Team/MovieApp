@@ -10,6 +10,7 @@ import com.karrar.movieapp.domain.mappers.savedList.SaveListDetailsMapper
 import com.karrar.movieapp.domain.mappers.search.SearchActorMapper
 import com.karrar.movieapp.domain.mappers.search.SearchHistoryMapper
 import com.karrar.movieapp.domain.mappers.search.SearchSeriesMapper
+import com.karrar.movieapp.ui.actorDetails.ActorExternalIdsMapper
 import javax.inject.Inject
 
 class MovieMappersContainer @Inject constructor(
@@ -35,6 +36,7 @@ class MovieMappersContainer @Inject constructor(
     val popularMovieEntityMapper: PopularMovieMapper,
     val trendingMapper: TrendingMovieMapper,
     val upcomingMovieMapper: UpcomingMovieMapper,
+    val actorExternalIdsMapper: ActorExternalIdsMapper,
 
 
     )
