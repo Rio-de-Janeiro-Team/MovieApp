@@ -54,11 +54,10 @@
                     tools:text="Action movies" />
 
                 <TextView
-                    style="@style/Regular.Small"
+                    style="@style/Body.sm.regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="4dp"
-                    android:layout_marginEnd="@dimen/spacing_medium"
                     android:text="@{@string/items(item.mediaCounts)}"
                     tools:text="14 items" />
 
@@ -71,8 +70,8 @@
 
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:padding="0dp"
                 android:src="@drawable/ic_arrow_right"
                 app:tint="@color/shade_tertiary"
