@@ -3,6 +3,7 @@ package com.karrar.movieapp.data.remote.service
 import com.karrar.movieapp.data.remote.response.*
 import com.karrar.movieapp.data.remote.response.account.AccountDto
 import com.karrar.movieapp.data.remote.response.actor.ActorDto
+import com.karrar.movieapp.data.remote.response.actor.ActorExternalIdsDto
 import com.karrar.movieapp.data.remote.response.actor.ActorMoviesDto
 import com.karrar.movieapp.data.remote.response.genre.GenreResponse
 import com.karrar.movieapp.data.remote.response.login.RequestTokenResponse
@@ -77,6 +78,10 @@ interface MovieService {
 
     @GET("person/{person_id}")
     suspend fun getActorDetails(@Path("person_id") actorId: Int): Response<ActorDto>
+    @GET("person/{person_id}/external_ids")
+    suspend fun getActorExternalIds(
+        @Path("person_id") actorId: Int
+    ): Response<ActorExternalIdsDto>
 
     @GET("person/{person_id}/movie_credits")
     suspend fun getActorMovies(@Path("person_id") actorId: Int): Response<ActorMoviesDto>
