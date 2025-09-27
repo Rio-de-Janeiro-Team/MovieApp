@@ -1,5 +1,6 @@
 package com.karrar.movieapp.ui.home
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.karrar.movieapp.domain.RequestStatus

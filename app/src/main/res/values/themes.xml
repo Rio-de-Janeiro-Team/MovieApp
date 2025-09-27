@@ -239,4 +239,21 @@
     </style>
 
 
+
+    <style name="Label">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Label.regular">
+        <item name="android:fontFamily">@font/manrope_regular</item>
+    </style>
+
+    <style name="Label.medium">
+        <item name="android:fontFamily">@font/manrope_medium</item>
+    </style>
+
+    <style name="Label.semi_bold">
+        <item name="android:fontFamily">@font/manrope_semibold</item>
+    </style>
+
 </resources>
